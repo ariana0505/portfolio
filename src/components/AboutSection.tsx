@@ -94,7 +94,7 @@ export function AboutSection() {
           </BentoCard>
 
           {/* Stats row */}
-          <StatCard value={38} label={t('about.stats.leetcode_label')} icon={Code2} delay={0.15} />
+          <StatCard value={26} label={t('about.stats.leetcode_label')} icon={Code2} delay={0.15} />
           <StatCard value={13} label={t('about.stats.repos_label')} icon={Zap} delay={0.2} />
           <StatCard value={3} label={t('about.stats.languages_label')} icon={Coffee} delay={0.25} />
         </div>
