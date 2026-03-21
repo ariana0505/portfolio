@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "experience": "Experience",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Ariana Peña",
+    "tagline": "Aspiring developer from Peru, learning one problem at a time. Building projects in Python, TypeScript, and exploring modern web development.",
+    "cta_projects": "View Projects",
+    "cta_contact": "Get in Touch",
+    "status_label": "Current status",
+    "status": "Open to opportunities"
+  },
+  "about": {
+    "title": "About",
+    "subtitle": "Get to know me better",
+    "bio": "I'm a self-taught developer from Peru who started coding in late 2024. Since then, I've been building projects in Python, JavaScript, and TypeScript, tackling algorithm challenges on LeetCode, and exploring web development with tools like Astro and Node.js. I believe in learning by doing — every project and every problem solved is a step forward.",
+    "skills_title": "Skills & Technologies",
+    "currently_learning": "Currently Learning",
+    "stats": {
+      "leetcode_label": "LeetCode Problems",
+      "repos_label": "Repositories",
+      "languages_label": "Languages"
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Technologies I work with",
+    "all": "All"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "What I've been building",
+    "all": "All",
+    "view_live": "Live Demo",
+    "view_code": "Source Code",
+    "featured": "Featured",
+    "view_all_github": "View all on GitHub"
+  },
+  "experience": {
+    "title": "Journey",
+    "subtitle": "My learning path"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Thoughts and tutorials",
+    "read_more": "Read More",
+    "view_all": "View All Posts",
+    "back": "Back to Blog",
+    "all_posts": "All Posts"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's work together",
+    "description": "Have a question or want to collaborate? Drop me a message and I'll get back to you.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "name_placeholder": "Your name",
+    "email_placeholder": "your@email.com",
+    "message_placeholder": "Tell me about your project...",
+    "availability": "I'm currently open to freelance projects, collaborations, and learning opportunities. Response time is usually within 24 hours."
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "made_with": "Made with",
+    "tagline": "Aspiring developer from Peru",
+    "quick_links": "Quick Links",
+    "connect": "Connect"
+  },
+  "not_found": {
+    "title": "Page Not Found",
+    "message": "The page you're looking for doesn't exist or has been moved.",
+    "back_home": "Go Home"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "blog": "Blog",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "name": "Ariana Peña",
+    "tagline": "Desarrolladora en formación desde Perú, aprendiendo un problema a la vez. Construyendo proyectos en Python, TypeScript y explorando el desarrollo web moderno.",
+    "cta_projects": "Ver Proyectos",
+    "cta_contact": "Contáctame",
+    "status_label": "Estado actual",
+    "status": "Abierta a oportunidades"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "subtitle": "Conóceme mejor",
+    "bio": "Soy una desarrolladora autodidacta de Perú que empezó a programar a finales de 2024. Desde entonces, he estado construyendo proyectos en Python, JavaScript y TypeScript, resolviendo desafíos de algoritmos en LeetCode y explorando el desarrollo web con herramientas como Astro y Node.js. Creo en aprender haciendo — cada proyecto y cada problema resuelto es un paso adelante.",
+    "skills_title": "Habilidades y Tecnologías",
+    "currently_learning": "Aprendiendo ahora",
+    "stats": {
+      "leetcode_label": "Problemas LeetCode",
+      "repos_label": "Repositorios",
+      "languages_label": "Lenguajes"
+    }
+  },
+  "skills": {
+    "title": "Habilidades",
+    "subtitle": "Tecnologías con las que trabajo",
+    "all": "Todos"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Lo que he estado construyendo",
+    "all": "Todos",
+    "view_live": "Demo en Vivo",
+    "view_code": "Código Fuente",
+    "featured": "Destacado",
+    "view_all_github": "Ver todo en GitHub"
+  },
+  "experience": {
+    "title": "Camino",
+    "subtitle": "Mi ruta de aprendizaje"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Reflexiones y tutoriales",
+    "read_more": "Leer Más",
+    "view_all": "Ver Todos los Posts",
+    "back": "Volver al Blog",
+    "all_posts": "Todos los Posts"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Trabajemos juntos",
+    "description": "¿Tienes alguna pregunta o quieres colaborar? Envíame un mensaje y te responderé.",
+    "name": "Nombre",
+    "email": "Correo",
+    "message": "Mensaje",
+    "send": "Enviar Mensaje",
+    "name_placeholder": "Tu nombre",
+    "email_placeholder": "tu@correo.com",
+    "message_placeholder": "Cuéntame sobre tu proyecto...",
+    "availability": "Actualmente estoy abierta a proyectos freelance, colaboraciones y oportunidades de aprendizaje. Tiempo de respuesta generalmente dentro de 24 horas."
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "made_with": "Hecho con",
+    "tagline": "Desarrolladora en formación desde Perú",
+    "quick_links": "Enlaces Rápidos",
+    "connect": "Conectar"
+  },
+  "not_found": {
+    "title": "Página No Encontrada",
+    "message": "La página que buscas no existe o ha sido movida.",
+    "back_home": "Ir al Inicio"
+  }
+}

@@ -1,0 +1,88 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Syne", sans-serif;
+  --font-mono: "Space Grotesk", sans-serif;
+
+  --color-primary-50: #f0f7ff;
+  --color-primary-100: #e0effe;
+  --color-primary-200: #b9dffe;
+  --color-primary-300: #7cc4fd;
+  --color-primary-400: #36a3f9;
+  --color-primary-500: #0c87ea;
+  --color-primary-600: #006bc8;
+  --color-primary-700: #0155a2;
+  --color-primary-800: #064986;
+  --color-primary-900: #0b3d6f;
+
+  --color-secondary-50: #effcfc;
+  --color-secondary-100: #d6f6f7;
+  --color-secondary-200: #b2ecef;
+  --color-secondary-300: #7ddce2;
+  --color-secondary-400: #3fc3cd;
+  --color-secondary-500: #1fa7b3;
+  --color-secondary-600: #1b8797;
+  --color-secondary-700: #1d6d7b;
+  --color-secondary-800: #215966;
+  --color-secondary-900: #204a56;
+
+  --color-accent: #0ea5e9;
+
+  --color-surface: #ffffff;
+  --color-surface-dark: #0c1222;
+  --color-surface-dark-elevated: #162032;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-surface);
+  color: #1a1a2e;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark body {
+  background-color: var(--color-surface-dark);
+  color: #e2e8f0;
+}
+
+/* Noise overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+.dark .noise-overlay {
+  opacity: 0.02;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-300);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--color-primary-700);
+}
