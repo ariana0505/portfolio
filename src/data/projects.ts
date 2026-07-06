@@ -8,8 +8,8 @@ export const projects: Project[] = [
       es: 'LeetCode 75 - Python',
     },
     description: {
-      en: 'Solutions to the curated LeetCode 75 problem list in Python. 26 problems solved across 9 categories: arrays, trees, dynamic programming, sliding window, bit manipulation, and more.',
-      es: 'Soluciones a la lista curada de 75 problemas de LeetCode en Python. 26 problemas resueltos en 9 categorías: arreglos, árboles, programación dinámica, ventana deslizante, manipulación de bits y más.',
+      en: 'Solutions to the curated LeetCode 75 problem list in Python. 52 problems solved across 9 categories: arrays, trees, dynamic programming, sliding window, bit manipulation, and more.',
+      es: 'Soluciones a la lista curada de 75 problemas de LeetCode en Python. 52 problemas resueltos en 9 categorías: arreglos, árboles, programación dinámica, ventana deslizante, manipulación de bits y más.',
     },
     image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop',
     tags: ['Python', 'Algorithms', 'Data Structures'],

@@ -70,8 +70,8 @@ export function HeroSection() {
         ))}
       </div>
 
-      <div className="relative z-10 mx-auto max-w-6xl px-6 w-full">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 mx-auto max-w-3xl px-6 w-full">
+        <div className="grid gap-12 items-center">
           {/* Left: Text content */}
           <div>
             <motion.div
@@ -129,39 +129,6 @@ export function HeroSection() {
               </button>
             </motion.div>
           </div>
-
-          {/* Right: Photo */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="flex justify-center md:justify-end"
-          >
-            <div className="relative">
-              {/* Gradient ring */}
-              <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-3xl p-[3px] bg-gradient-to-br from-primary-500 via-secondary-400 to-accent rotate-3 hover:rotate-0 transition-transform duration-500">
-                <div className="w-full h-full rounded-3xl overflow-hidden bg-surface dark:bg-surface-dark">
-                  <img
-                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
-                    alt="Ariana Peña"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-              {/* Floating status badge */}
-              <motion.div
-                className="absolute -bottom-3 -left-3 rounded-xl bg-white dark:bg-surface-dark-elevated shadow-lg border border-gray-200 dark:border-primary-800/30 px-4 py-2"
-                animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                <span className="font-mono text-xs text-gray-500 dark:text-gray-400 block">{t('hero.status_label')}</span>
-                <span className="text-sm font-medium text-gray-900 dark:text-white flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                  {t('hero.status')}
-                </span>
-              </motion.div>
-            </div>
-          </motion.div>
         </div>
 
         {/* Scroll indicator */}

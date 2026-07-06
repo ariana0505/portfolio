@@ -84,7 +84,7 @@ export function AboutSection() {
               </span>
             </div>
             <ul className="space-y-2">
-              {['React + TypeScript', 'Node.js APIs', 'Data Structures', 'System Design'].map((item) => (
+              {['Python avanzado', 'Algoritmos', 'LLMs (conceptos)', 'Inglés'].map((item) => (
                 <li key={item} className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
                   <span className="w-1.5 h-1.5 rounded-full bg-secondary-400" />
                   {item}
@@ -94,7 +94,7 @@ export function AboutSection() {
           </BentoCard>
 
           {/* Stats row */}
-          <StatCard value={26} label={t('about.stats.leetcode_label')} icon={Code2} delay={0.15} />
+          <StatCard value={52} label={t('about.stats.leetcode_label')} icon={Code2} delay={0.15} />
           <StatCard value={13} label={t('about.stats.repos_label')} icon={Zap} delay={0.2} />
           <StatCard value={3} label={t('about.stats.languages_label')} icon={Coffee} delay={0.25} />
         </div>

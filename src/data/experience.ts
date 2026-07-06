@@ -40,8 +40,8 @@ export const experiences: Experience[] = [
     },
     highlights: [
       {
-        en: 'Completed 38 of 75 problems (51%) across 9 categories',
-        es: 'Completé 38 de 75 problemas (51%) en 9 categorías',
+        en: 'Completed 52 of 75 problems (69%) across 9 categories',
+        es: 'Completé 52 de 75 problemas (69%) en 9 categorías',
       },
       {
         en: 'Covered arrays, trees, dynamic programming, sliding window, and bit manipulation',
