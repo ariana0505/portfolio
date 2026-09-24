@@ -2,28 +2,28 @@ import type { Experience } from '@/types'
 
 export const experiences: Experience[] = [
   {
-    company: 'Personal Projects',
+    company: 'BiblioMatch',
     role: {
-      en: 'Self-Taught Developer',
-      es: 'Desarrolladora Autodidacta',
+      en: 'Full-stack Project',
+      es: 'Proyecto Full Stack',
     },
-    period: '2025 - Present',
+    period: '2026',
     description: {
-      en: 'Building personal projects and learning through practice across multiple languages and technologies.',
-      es: 'Construyendo proyectos personales y aprendiendo a través de la práctica en múltiples lenguajes y tecnologías.',
+      en: 'Designed and built a school library platform with real workflows for students, librarians, and administrators.',
+      es: 'Diseñé y construí una plataforma de biblioteca escolar con flujos reales para estudiantes, bibliotecarios y administradores.',
     },
     highlights: [
       {
-        en: 'Built and maintained 13+ repositories on GitHub covering Python, JavaScript, and TypeScript',
-        es: 'Construí y mantuve más de 13 repositorios en GitHub abarcando Python, JavaScript y TypeScript',
+        en: 'Implemented secure sessions, CSRF protection, role checks, input validation, and login rate limits',
+        es: 'Implementé sesiones seguras, protección CSRF, control de roles, validación de entradas y límites de intentos de acceso',
       },
       {
-        en: 'Developed a static site with Astro as my first frontend framework project',
-        es: 'Desarrollé un sitio estático con Astro como mi primer proyecto con un framework frontend',
+        en: 'Built catalog, inventory, request, loan, review, user management, and reporting flows',
+        es: 'Construí flujos de catálogo, inventario, solicitudes, préstamos, opiniones, usuarios y estadísticas',
       },
       {
-        en: 'Learning backend fundamentals with Node.js and server-side JavaScript',
-        es: 'Aprendiendo fundamentos de backend con Node.js y JavaScript del lado del servidor',
+        en: 'Added AI-assisted recommendations, study tools, and an interactive 3D library experience',
+        es: 'Añadí recomendaciones con IA, herramientas de estudio y una experiencia de biblioteca 3D interactiva',
       },
     ],
   },
@@ -35,13 +35,13 @@ export const experiences: Experience[] = [
     },
     period: '2025 - Present',
     description: {
-      en: 'Solving the LeetCode 75 curated problem list in Python to build a strong foundation in algorithmic thinking.',
-      es: 'Resolviendo la lista curada LeetCode 75 en Python para construir una base sólida en pensamiento algorítmico.',
+      en: 'Completed a Python file for every problem in a curated 75-problem collection and published a bilingual companion website.',
+      es: 'Completé un archivo Python para cada problema de una colección curada de 75 retos y publiqué un sitio bilingüe complementario.',
     },
     highlights: [
       {
-        en: 'Completed 38 of 75 problems (51%) across 9 categories',
-        es: 'Completé 38 de 75 problemas (51%) en 9 categorías',
+        en: 'Created 75/75 solution files and continue reviewing edge cases and correctness',
+        es: 'Creé 75/75 archivos de solución y continúo revisando casos límite y corrección',
       },
       {
         en: 'Covered arrays, trees, dynamic programming, sliding window, and bit manipulation',
@@ -54,15 +54,15 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    company: 'Online Courses',
+    company: 'Independent Learning',
     role: {
       en: 'Web Development Foundations',
       es: 'Fundamentos de Desarrollo Web',
     },
     period: '2024 - 2025',
     description: {
-      en: 'Started my programming journey learning JavaScript, TypeScript, and web fundamentals through online courses and hands-on practice.',
-      es: 'Comencé mi camino en la programación aprendiendo JavaScript, TypeScript y fundamentos web a través de cursos en línea y práctica.',
+      en: 'Started my programming journey with web fundamentals and now maintain 19 public repositories across Python, JavaScript, and TypeScript.',
+      es: 'Comencé mi camino en programación con fundamentos web y hoy mantengo 19 repositorios públicos en Python, JavaScript y TypeScript.',
     },
     highlights: [
       {

@@ -11,14 +11,14 @@ const categoryGlows: Record<string, string> = {
   Languages: 'hover:shadow-[0_0_20px_rgba(12,135,234,0.3)]',
   Web: 'hover:shadow-[0_0_20px_rgba(31,167,179,0.3)]',
   Tools: 'hover:shadow-[0_0_20px_rgba(147,197,253,0.3)]',
-  Learning: 'hover:shadow-[0_0_20px_rgba(103,232,249,0.3)]',
+  Data: 'hover:shadow-[0_0_20px_rgba(103,232,249,0.3)]',
 }
 
 const categoryColors: Record<string, string> = {
   Languages: 'border-primary-500/40 bg-primary-500/10 text-primary-600 dark:text-primary-300',
   Web: 'border-secondary-500/40 bg-secondary-500/10 text-secondary-600 dark:text-secondary-300',
   Tools: 'border-primary-300/40 bg-primary-300/10 text-primary-500 dark:text-primary-300',
-  Learning: 'border-secondary-300/40 bg-secondary-300/10 text-secondary-500 dark:text-secondary-300',
+  Data: 'border-secondary-300/40 bg-secondary-300/10 text-secondary-500 dark:text-secondary-300',
 }
 
 const levelSizes: Record<number, string> = {
@@ -34,6 +34,12 @@ export function SkillsCloud() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null)
 
   const categories = ['All', ...skillCategories]
+  const categoryLabels: Record<string, string> = {
+    Languages: t('skills.categories.languages'),
+    Web: t('skills.categories.web'),
+    Data: t('skills.categories.data'),
+    Tools: t('skills.categories.tools'),
+  }
 
   return (
     <section id={SECTION_IDS.skills} className="py-20 px-6">
@@ -66,7 +72,7 @@ export function SkillsCloud() {
                     />
                   )}
                   <span className="relative z-10">
-                    {category === 'All' ? t('skills.all') : category}
+                    {category === 'All' ? t('skills.all') : categoryLabels[category]}
                   </span>
                 </button>
               )

@@ -1,27 +1,11 @@
 import { useTranslation } from 'react-i18next'
-import { Send, Github, Mail, ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Github, MessageCircle } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { SECTION_IDS } from '@/lib/constants'
 import { AnimatedSection } from './AnimatedSection'
-import { socialLinks } from '@/data/social-links'
-import type { FormEvent } from 'react'
-
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Github, Mail,
-}
 
 export function ContactSection() {
   const { t } = useTranslation()
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const form = e.currentTarget
-    const data = new FormData(form)
-    const name = data.get('name') as string
-    const email = data.get('email') as string
-    const message = data.get('message') as string
-    window.location.href = `mailto:hello@example.com?subject=Contact from ${name} (${email})&body=${encodeURIComponent(message)}`
-  }
 
   return (
     <section id={SECTION_IDS.contact} className="py-24 px-6">
@@ -40,106 +24,38 @@ export function ContactSection() {
           </div>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-5 gap-8">
-          {/* Form - 3 cols */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="md:col-span-3"
-          >
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-                    {t('contact.name')}
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    placeholder={t('contact.name_placeholder')}
-                    className="w-full rounded-xl border border-gray-200 dark:border-primary-800/50 bg-white dark:bg-surface-dark px-4 py-3 text-sm text-gray-900 dark:text-white placeholder-gray-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-                    {t('contact.email')}
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    placeholder={t('contact.email_placeholder')}
-                    className="w-full rounded-xl border border-gray-200 dark:border-primary-800/50 bg-white dark:bg-surface-dark px-4 py-3 text-sm text-gray-900 dark:text-white placeholder-gray-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all"
-                  />
-                </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="relative overflow-hidden rounded-3xl border border-primary-200/70 bg-white p-8 shadow-xl shadow-primary-500/5 dark:border-primary-800/40 dark:bg-surface-dark-elevated md:p-12"
+        >
+          <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-secondary-300/20 blur-3xl dark:bg-secondary-500/10" />
+          <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
+            <div>
+              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 text-white">
+                <MessageCircle className="h-5 w-5" aria-hidden="true" />
               </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-                  {t('contact.message')}
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={5}
-                  placeholder={t('contact.message_placeholder')}
-                  className="w-full rounded-xl border border-gray-200 dark:border-primary-800/50 bg-white dark:bg-surface-dark px-4 py-3 text-sm text-gray-900 dark:text-white placeholder-gray-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all resize-none"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 px-6 py-3 text-sm font-medium text-white hover:opacity-90 transition-opacity cursor-pointer"
-              >
-                <Send className="h-4 w-4" />
-                {t('contact.send')}
-              </button>
-            </form>
-          </motion.div>
-
-          {/* Social links - 2 cols */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="md:col-span-2 flex flex-col gap-3"
-          >
-            {socialLinks.map((link) => {
-              const Icon = iconMap[link.icon]
-              return (
-                <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-4 rounded-2xl bg-white dark:bg-surface-dark-elevated border border-gray-200 dark:border-primary-800/30 p-5 hover:border-primary-300 dark:hover:border-primary-600 transition-all"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-100 to-secondary-100 dark:from-primary-900/40 dark:to-secondary-900/40 flex items-center justify-center group-hover:from-primary-500 group-hover:to-secondary-500 transition-all">
-                    {Icon && <Icon className="h-4 w-4 text-primary-600 dark:text-primary-400 group-hover:text-white transition-colors" />}
-                  </div>
-                  <div className="flex-1">
-                    <p className="font-medium text-sm text-gray-900 dark:text-white">{link.name}</p>
-                    <p className="text-xs text-gray-500 dark:text-gray-400">
-                      {link.url.replace(/^https?:\/\//, '').replace(/^mailto:/, '')}
-                    </p>
-                  </div>
-                  <ArrowUpRight className="h-4 w-4 text-gray-400 group-hover:text-primary-500 transition-colors" />
-                </a>
-              )
-            })}
-
-            <div className="mt-auto pt-4 rounded-2xl bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 border border-gray-200 dark:border-primary-800/30 p-5">
-              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p className="max-w-xl text-gray-600 dark:text-gray-300 leading-relaxed">
                 {t('contact.availability')}
               </p>
+              <p className="mt-3 max-w-xl text-sm text-gray-500 dark:text-gray-400">
+                {t('contact.github_note')}
+              </p>
             </div>
-          </motion.div>
-        </div>
+            <a
+              href="https://github.com/ariana0505"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/20 transition-all hover:-translate-y-0.5 hover:shadow-xl"
+            >
+              <Github className="h-4 w-4" aria-hidden="true" />
+              {t('contact.github_cta')}
+              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+            </a>
+          </div>
+        </motion.div>
       </div>
     </section>
   )

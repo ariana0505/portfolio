@@ -2,14 +2,31 @@ import type { Project } from '@/types'
 
 export const projects: Project[] = [
   {
+    slug: 'bibliomatch',
+    title: {
+      en: 'BiblioMatch',
+      es: 'BiblioMatch',
+    },
+    description: {
+      en: 'A full-stack school library platform with role-based access, catalog and loan management, reviews, learning progress, AI reading recommendations, and an interactive 3D library.',
+      es: 'Plataforma full stack para bibliotecas escolares con acceso por roles, gestión de catálogo y préstamos, opiniones, progreso de aprendizaje, recomendaciones con IA y una biblioteca 3D interactiva.',
+    },
+    image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1200&h=800&fit=crop&auto=format&q=80',
+    tags: ['Python', 'MongoDB', 'JavaScript', 'AI'],
+    category: 'fullstack',
+    liveUrl: 'https://bibliomatch.vercel.app',
+    githubUrl: 'https://github.com/ariana0505/bibliomatch',
+    featured: true,
+  },
+  {
     slug: 'leetcode75-python',
     title: {
       en: 'LeetCode 75 - Python',
       es: 'LeetCode 75 - Python',
     },
     description: {
-      en: 'Solutions to the curated LeetCode 75 problem list in Python. 26 problems solved across 9 categories: arrays, trees, dynamic programming, sliding window, bit manipulation, and more.',
-      es: 'Soluciones a la lista curada de 75 problemas de LeetCode en Python. 26 problemas resueltos en 9 categorías: arreglos, árboles, programación dinámica, ventana deslizante, manipulación de bits y más.',
+      en: 'A bilingual collection with Python files for all 75 problems, organized by pattern and paired with an Astro website for browsing statements and solutions.',
+      es: 'Colección bilingüe con archivos Python para los 75 problemas, organizada por patrones y acompañada de un sitio en Astro para explorar enunciados y soluciones.',
     },
     image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop',
     tags: ['Python', 'Algorithms', 'Data Structures'],
@@ -19,35 +36,35 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    slug: 'portfolio',
+    title: {
+      en: 'Developer Portfolio',
+      es: 'Portafolio de Desarrollo',
+    },
+    description: {
+      en: 'This bilingual portfolio, built as a responsive React application with typed content, dark mode, accessible navigation, project case studies, and a technical blog.',
+      es: 'Este portafolio bilingüe, construido como una aplicación React responsive con contenido tipado, modo oscuro, navegación accesible, proyectos y blog técnico.',
+    },
+    image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=1200&h=800&fit=crop&auto=format&q=80',
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'i18n'],
+    category: 'frontend',
+    liveUrl: 'https://ariana0505.github.io/portfolio/',
+    githubUrl: 'https://github.com/ariana0505/portfolio',
+  },
+  {
     slug: 'pokemon-static-site',
     title: {
       en: 'Pokemon Static Site',
-      es: 'Sitio Estático de Pokemon',
+      es: 'Sitio Estático de Pokémon',
     },
     description: {
-      en: 'A static website built with Astro showcasing Pokemon data. My first experience with a modern frontend framework.',
-      es: 'Un sitio web estático construido con Astro mostrando datos de Pokemon. Mi primera experiencia con un framework frontend moderno.',
+      en: 'A fast static website built with Astro to present Pokémon data, focused on reusable components, structured content, and responsive design.',
+      es: 'Un sitio estático rápido construido con Astro para presentar datos de Pokémon, con componentes reutilizables, contenido estructurado y diseño responsive.',
     },
-    image: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?w=600&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?w=1200&h=800&fit=crop&auto=format&q=80',
     tags: ['Astro', 'HTML', 'CSS'],
     category: 'frontend',
     githubUrl: 'https://github.com/ariana0505/02-pokemon-static',
-    featured: true,
-  },
-  {
-    slug: 'nodejs-course',
-    title: {
-      en: 'Node.js Course Project',
-      es: 'Proyecto del Curso de Node.js',
-    },
-    description: {
-      en: 'Backend project built while learning Node.js fundamentals, including server creation, routing, and API basics.',
-      es: 'Proyecto backend construido mientras aprendía los fundamentos de Node.js, incluyendo creación de servidores, rutas y conceptos básicos de APIs.',
-    },
-    image: 'https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=600&h=400&fit=crop',
-    tags: ['Node.js', 'JavaScript'],
-    category: 'backend',
-    githubUrl: 'https://github.com/ariana0505/Curso-Node-Js',
   },
 ]
 

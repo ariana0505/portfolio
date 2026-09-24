@@ -9,7 +9,8 @@
   "hero": {
     "greeting": "Hi, I'm",
     "name": "Ariana Peña",
-    "tagline": "Aspiring developer from Peru, learning one problem at a time. Building projects in Python, TypeScript, and exploring modern web development.",
+    "tagline": "I build web applications with Python, JavaScript, and TypeScript. I turn what I learn into functional, secure products designed for real people.",
+    "location": "Peru · Available for remote opportunities",
     "cta_projects": "View Projects",
     "cta_contact": "Get in Touch",
     "status_label": "Current status",
@@ -18,9 +19,15 @@
   "about": {
     "title": "About",
     "subtitle": "Get to know me better",
-    "bio": "I'm a self-taught developer from Peru who started coding in late 2024. Since then, I've been building projects in Python, JavaScript, and TypeScript, tackling algorithm challenges on LeetCode, and exploring web development with tools like Astro and Node.js. I believe in learning by doing — every project and every problem solved is a step forward.",
+    "bio": "I'm a self-taught developer from Peru. I build web products end to end and strengthen my foundations through algorithm practice. My most complete project, BiblioMatch, brings together secure authentication, roles, loan workflows, MongoDB, AI-assisted tools, and an interactive 3D library. I believe in learning by doing and documenting the process.",
     "skills_title": "Skills & Technologies",
-    "currently_learning": "Currently Learning",
+    "currently_learning": "Current Focus",
+    "focus": {
+      "secure_apps": "Secure web applications",
+      "testing": "Automated testing",
+      "data_structures": "Data structures",
+      "system_design": "System design"
+    },
     "stats": {
       "leetcode_label": "LeetCode Problems",
       "repos_label": "Repositories",
@@ -30,11 +37,17 @@
   "skills": {
     "title": "Skills",
     "subtitle": "Technologies I work with",
-    "all": "All"
+    "all": "All",
+    "categories": {
+      "languages": "Languages",
+      "web": "Web",
+      "data": "Data & logic",
+      "tools": "Tools"
+    }
   },
   "projects": {
     "title": "Projects",
-    "subtitle": "What I've been building",
+    "subtitle": "Products, not just exercises",
     "all": "All",
     "view_live": "Live Demo",
     "view_code": "Source Code",
@@ -43,7 +56,7 @@
   },
   "experience": {
     "title": "Journey",
-    "subtitle": "My learning path"
+    "subtitle": "How my work has evolved"
   },
   "blog": {
     "title": "Blog",
@@ -56,7 +69,7 @@
   "contact": {
     "title": "Contact",
     "subtitle": "Let's work together",
-    "description": "Have a question or want to collaborate? Drop me a message and I'll get back to you.",
+    "description": "Have an opportunity, an idea, or feedback on my work? Let's talk.",
     "name": "Name",
     "email": "Email",
     "message": "Message",
@@ -64,7 +77,9 @@
     "name_placeholder": "Your name",
     "email_placeholder": "your@email.com",
     "message_placeholder": "Tell me about your project...",
-    "availability": "I'm currently open to freelance projects, collaborations, and learning opportunities. Response time is usually within 24 hours."
+    "availability": "I'm currently open to junior opportunities, freelance projects, and collaborations where I can contribute, learn, and build useful software.",
+    "github_note": "For now, GitHub is my public contact channel. You can also review the code, activity, and real evolution of my projects there.",
+    "github_cta": "Contact me on GitHub"
   },
   "footer": {
     "rights": "All rights reserved.",
@@ -77,5 +92,8 @@
     "title": "Page Not Found",
     "message": "The page you're looking for doesn't exist or has been moved.",
     "back_home": "Go Home"
+  },
+  "accessibility": {
+    "skip_content": "Skip to content"
   }
 }

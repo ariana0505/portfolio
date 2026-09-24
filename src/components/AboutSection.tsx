@@ -6,7 +6,7 @@ import { SECTION_IDS } from '@/lib/constants'
 import { AnimatedSection } from './AnimatedSection'
 
 function StatCard({ value, label, icon: Icon, delay }: {
-  value: number; label: string; icon: React.ComponentType<{ className?: string }>; delay: number
+  value: string; label: string; icon: React.ComponentType<{ className?: string }>; delay: number
 }) {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, margin: '-50px' })
@@ -24,7 +24,7 @@ function StatCard({ value, label, icon: Icon, delay }: {
           <Icon className="h-4 w-4 text-primary-600 dark:text-primary-400" />
         </div>
         <span className="text-2xl font-bold text-gray-900 dark:text-white">
-          {isInView ? value : 0}+
+          {isInView ? value : '0'}
         </span>
       </div>
       <span className="text-sm text-gray-500 dark:text-gray-400">{label}</span>
@@ -84,19 +84,19 @@ export function AboutSection() {
               </span>
             </div>
             <ul className="space-y-2">
-              {['React + TypeScript', 'Node.js APIs', 'Data Structures', 'System Design'].map((item) => (
+              {['secure_apps', 'testing', 'data_structures', 'system_design'].map((item) => (
                 <li key={item} className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
                   <span className="w-1.5 h-1.5 rounded-full bg-secondary-400" />
-                  {item}
+                  {t(`about.focus.${item}`)}
                 </li>
               ))}
             </ul>
           </BentoCard>
 
           {/* Stats row */}
-          <StatCard value={26} label={t('about.stats.leetcode_label')} icon={Code2} delay={0.15} />
-          <StatCard value={13} label={t('about.stats.repos_label')} icon={Zap} delay={0.2} />
-          <StatCard value={3} label={t('about.stats.languages_label')} icon={Coffee} delay={0.25} />
+          <StatCard value="75/75" label={t('about.stats.leetcode_label')} icon={Code2} delay={0.15} />
+          <StatCard value="19" label={t('about.stats.repos_label')} icon={Zap} delay={0.2} />
+          <StatCard value="3" label={t('about.stats.languages_label')} icon={Coffee} delay={0.25} />
         </div>
       </div>
     </section>

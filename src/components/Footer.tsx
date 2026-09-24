@@ -1,13 +1,11 @@
 import { useTranslation } from 'react-i18next'
-import { Heart, Github, Linkedin, Twitter, Mail } from 'lucide-react'
+import { Link } from 'react-router'
+import { Heart, Github } from 'lucide-react'
 import { socialLinks } from '@/data/social-links'
 import { NAV_ITEMS } from '@/lib/constants'
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Github,
-  Linkedin,
-  Twitter,
-  Mail,
 }
 
 export function Footer() {
@@ -37,13 +35,13 @@ export function Footer() {
             </h4>
             <nav className="flex flex-col gap-2">
               {NAV_ITEMS.map((item) => (
-                <a
+                <Link
                   key={item.labelKey}
-                  href={`/${item.href}`}
+                  to={`/${item.href}`}
                   className="text-sm text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                 >
                   {t(item.labelKey)}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>

@@ -9,7 +9,8 @@
   "hero": {
     "greeting": "Hola, soy",
     "name": "Ariana Peña",
-    "tagline": "Desarrolladora en formación desde Perú, aprendiendo un problema a la vez. Construyendo proyectos en Python, TypeScript y explorando el desarrollo web moderno.",
+    "tagline": "Desarrollo aplicaciones web con Python, JavaScript y TypeScript. Convierto lo que aprendo en proyectos funcionales, seguros y pensados para personas reales.",
+    "location": "Perú · Disponible para oportunidades remotas",
     "cta_projects": "Ver Proyectos",
     "cta_contact": "Contáctame",
     "status_label": "Estado actual",
@@ -18,9 +19,15 @@
   "about": {
     "title": "Sobre mí",
     "subtitle": "Conóceme mejor",
-    "bio": "Soy una desarrolladora autodidacta de Perú que empezó a programar a finales de 2024. Desde entonces, he estado construyendo proyectos en Python, JavaScript y TypeScript, resolviendo desafíos de algoritmos en LeetCode y explorando el desarrollo web con herramientas como Astro y Node.js. Creo en aprender haciendo — cada proyecto y cada problema resuelto es un paso adelante.",
+    "bio": "Soy una desarrolladora autodidacta de Perú. Construyo productos web de principio a fin y refuerzo mis fundamentos resolviendo problemas de algoritmos. Mi proyecto más completo, BiblioMatch, reúne autenticación segura, roles, flujos de préstamos, MongoDB, herramientas con IA y una biblioteca 3D. Creo en aprender haciendo y documentar el proceso.",
     "skills_title": "Habilidades y Tecnologías",
-    "currently_learning": "Aprendiendo ahora",
+    "currently_learning": "Enfoque actual",
+    "focus": {
+      "secure_apps": "Aplicaciones web seguras",
+      "testing": "Pruebas automatizadas",
+      "data_structures": "Estructuras de datos",
+      "system_design": "Diseño de sistemas"
+    },
     "stats": {
       "leetcode_label": "Problemas LeetCode",
       "repos_label": "Repositorios",
@@ -30,11 +37,17 @@
   "skills": {
     "title": "Habilidades",
     "subtitle": "Tecnologías con las que trabajo",
-    "all": "Todos"
+    "all": "Todos",
+    "categories": {
+      "languages": "Lenguajes",
+      "web": "Web",
+      "data": "Datos y lógica",
+      "tools": "Herramientas"
+    }
   },
   "projects": {
     "title": "Proyectos",
-    "subtitle": "Lo que he estado construyendo",
+    "subtitle": "Productos, no solo ejercicios",
     "all": "Todos",
     "view_live": "Demo en Vivo",
     "view_code": "Código Fuente",
@@ -43,7 +56,7 @@
   },
   "experience": {
     "title": "Camino",
-    "subtitle": "Mi ruta de aprendizaje"
+    "subtitle": "Cómo ha evolucionado mi trabajo"
   },
   "blog": {
     "title": "Blog",
@@ -56,7 +69,7 @@
   "contact": {
     "title": "Contacto",
     "subtitle": "Trabajemos juntos",
-    "description": "¿Tienes alguna pregunta o quieres colaborar? Envíame un mensaje y te responderé.",
+    "description": "¿Tienes una oportunidad, una idea o feedback sobre mi trabajo? Conversemos.",
     "name": "Nombre",
     "email": "Correo",
     "message": "Mensaje",
@@ -64,7 +77,9 @@
     "name_placeholder": "Tu nombre",
     "email_placeholder": "tu@correo.com",
     "message_placeholder": "Cuéntame sobre tu proyecto...",
-    "availability": "Actualmente estoy abierta a proyectos freelance, colaboraciones y oportunidades de aprendizaje. Tiempo de respuesta generalmente dentro de 24 horas."
+    "availability": "Actualmente estoy abierta a oportunidades junior, proyectos freelance y colaboraciones donde pueda aportar, aprender y construir software útil.",
+    "github_note": "Por ahora, GitHub es mi canal público de contacto. Allí también puedes revisar el código, la actividad y la evolución real de mis proyectos.",
+    "github_cta": "Contactar en GitHub"
   },
   "footer": {
     "rights": "Todos los derechos reservados.",
@@ -77,5 +92,8 @@
     "title": "Página No Encontrada",
     "message": "La página que buscas no existe o ha sido movida.",
     "back_home": "Ir al Inicio"
+  },
+  "accessibility": {
+    "skip_content": "Saltar al contenido"
   }
 }

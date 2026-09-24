@@ -50,9 +50,9 @@ export function Navbar() {
             const isActive = isHome && activeSection === sectionId
             const navHref = isHome ? item.href : `/${item.href}`
             return (
-              <a
+              <Link
                 key={item.labelKey}
-                href={navHref}
+                to={navHref}
                 onClick={(e) => {
                   if (isHome) {
                     e.preventDefault()
@@ -77,7 +77,7 @@ export function Navbar() {
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
-              </a>
+              </Link>
             )
           })}
           <LanguageSwitcher />
@@ -92,6 +92,8 @@ export function Navbar() {
             onClick={() => setMobileOpen(!mobileOpen)}
             className="rounded-lg p-2 hover:bg-primary-50 dark:hover:bg-primary-900/30 cursor-pointer"
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-navigation"
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -106,15 +108,16 @@ export function Navbar() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2 }}
+            id="mobile-navigation"
             className="md:hidden overflow-hidden bg-white/95 dark:bg-surface-dark/95 backdrop-blur-xl border-t border-gray-200 dark:border-primary-800/30"
           >
             <div className="flex flex-col px-6 py-4 gap-3">
               {NAV_ITEMS.map((item) => {
                 const navHref = isHome ? item.href : `/${item.href}`
                 return (
-                  <a
+                  <Link
                     key={item.labelKey}
-                    href={navHref}
+                    to={navHref}
                     onClick={(e) => {
                       if (isHome) {
                         e.preventDefault()
@@ -124,7 +127,7 @@ export function Navbar() {
                     className="text-sm font-medium text-gray-600 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 py-2"
                   >
                     {t(item.labelKey)}
-                  </a>
+                  </Link>
                 )
               })}
             </div>

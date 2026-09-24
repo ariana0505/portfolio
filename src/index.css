@@ -48,6 +48,15 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
+::selection {
+  background: color-mix(in srgb, var(--color-secondary-400) 30%, transparent);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-secondary-400);
+  outline-offset: 3px;
+}
+
 .dark body {
   background-color: var(--color-surface-dark);
   color: #e2e8f0;
@@ -85,4 +94,19 @@ body {
 
 .dark ::-webkit-scrollbar-thumb {
   background: var(--color-primary-700);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
-import { ArrowDown, Github, Mail } from 'lucide-react'
+import { ArrowDown, ArrowRight, Github, MapPin } from 'lucide-react'
 import { SECTION_IDS } from '@/lib/constants'
 import { useMousePosition } from '@/hooks/useMousePosition'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
@@ -108,25 +108,35 @@ export function HeroSection() {
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex items-center gap-4"
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="mb-8 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400"
             >
+              <MapPin className="h-4 w-4 text-secondary-500" aria-hidden="true" />
+              {t('hero.location')}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex flex-wrap items-center gap-3"
+            >
+              <button
+                onClick={() => scrollTo(SECTION_IDS.projects)}
+                className="flex items-center gap-2 rounded-xl bg-gray-900 dark:bg-white px-5 py-3 text-sm font-medium text-white dark:text-gray-900 hover:-translate-y-0.5 hover:shadow-lg transition-all cursor-pointer"
+              >
+                {t('hero.cta_projects')}
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </button>
               <a
                 href="https://github.com/ariana0505"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 rounded-xl bg-gray-900 dark:bg-white px-5 py-3 text-sm font-medium text-white dark:text-gray-900 hover:opacity-90 transition-opacity"
-              >
-                <Github className="h-4 w-4" />
-                GitHub
-              </a>
-              <button
-                onClick={() => scrollTo(SECTION_IDS.contact)}
                 className="flex items-center gap-2 rounded-xl border border-primary-300 dark:border-primary-700 px-5 py-3 text-sm font-medium text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors cursor-pointer"
               >
-                <Mail className="h-4 w-4" />
-                {t('hero.cta_contact')}
-              </button>
+                <Github className="h-4 w-4" aria-hidden="true" />
+                GitHub
+              </a>
             </motion.div>
           </div>
 
@@ -142,8 +152,11 @@ export function HeroSection() {
               <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-3xl p-[3px] bg-gradient-to-br from-primary-500 via-secondary-400 to-accent rotate-3 hover:rotate-0 transition-transform duration-500">
                 <div className="w-full h-full rounded-3xl overflow-hidden bg-surface dark:bg-surface-dark">
                   <img
-                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+                    src="https://github.com/ariana0505.png?size=640"
                     alt="Ariana Peña"
+                    width="640"
+                    height="640"
+                    fetchPriority="high"
                     className="w-full h-full object-cover"
                   />
                 </div>
