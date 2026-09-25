@@ -16,13 +16,13 @@ export function AboutSection() {
   return (
     <section id={SECTION_IDS.about} className="px-6 py-28">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-14 lg:grid-cols-[0.7fr_1.3fr]">
+        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
           <AnimatedSection>
-            <div>
+            <div className="min-w-0">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-primary-600 dark:text-primary-400">
                 01 / {t('about.title')}
               </span>
-              <h2 className="mt-4 max-w-sm font-display text-4xl font-extrabold leading-[0.98] tracking-[-0.04em] text-gray-950 dark:text-white md:text-6xl">
+              <h2 className="mt-4 max-w-md font-display text-4xl font-extrabold leading-[0.98] tracking-[-0.04em] text-gray-950 dark:text-white lg:text-5xl xl:text-6xl">
                 {t('about.subtitle')}
               </h2>
             </div>
