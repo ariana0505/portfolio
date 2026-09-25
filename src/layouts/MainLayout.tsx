@@ -2,9 +2,7 @@ import { Outlet } from 'react-router'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { ScrollToTop } from '@/components/ScrollToTop'
-import { CustomCursor } from '@/components/CustomCursor'
 import { ScrollProgress } from '@/components/ScrollProgress'
-import { InteractiveBackground } from '@/components/InteractiveBackground'
 import { useTranslation } from 'react-i18next'
 
 export function MainLayout() {
@@ -18,9 +16,7 @@ export function MainLayout() {
       >
         {t('accessibility.skip_content')}
       </a>
-      <CustomCursor />
       <ScrollProgress />
-      <InteractiveBackground />
       <ScrollToTop />
       <Navbar />
       <main id="main-content" className="flex-1 relative z-10">

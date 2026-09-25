@@ -29,22 +29,23 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        'fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300',
         scrolled
-          ? 'bg-white/80 dark:bg-surface-dark/80 backdrop-blur-xl shadow-sm border-b border-gray-200/80 dark:border-primary-800/30'
-          : 'bg-transparent'
+          ? 'border-gray-900/10 bg-surface/90 backdrop-blur-xl dark:border-white/10 dark:bg-surface-dark/90'
+          : 'border-transparent bg-transparent'
       )}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link
           to="/"
-          className="font-display text-xl font-extrabold bg-gradient-to-r from-primary-500 to-secondary-400 bg-clip-text text-transparent tracking-tight"
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-950 font-display text-sm font-extrabold tracking-tight text-white dark:bg-white dark:text-gray-950"
+          aria-label="Ariana Peña"
         >
           AP
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-6 relative">
+        <div className="relative hidden items-center gap-7 md:flex">
           {NAV_ITEMS.map((item) => {
             const sectionId = item.href.replace('#', '')
             const isActive = isHome && activeSection === sectionId
@@ -60,7 +61,7 @@ export function Navbar() {
                   }
                 }}
                 className={cn(
-                  'relative text-sm font-medium transition-colors py-1',
+                  'relative py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] transition-colors',
                   isActive
                     ? 'text-primary-600 dark:text-primary-400'
                     : 'text-gray-600 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400'
@@ -70,10 +71,7 @@ export function Navbar() {
                 {isActive && (
                   <motion.div
                     layoutId="nav-indicator"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full"
-                    style={{
-                      background: 'linear-gradient(to right, #0c87ea, #1fa7b3)',
-                    }}
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-secondary-500"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -90,7 +88,7 @@ export function Navbar() {
           <ThemeToggle />
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="rounded-lg p-2 hover:bg-primary-50 dark:hover:bg-primary-900/30 cursor-pointer"
+            className="cursor-pointer rounded-full border border-gray-900/15 p-2 hover:border-primary-500 dark:border-white/15"
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}
             aria-controls="mobile-navigation"
@@ -109,7 +107,7 @@ export function Navbar() {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2 }}
             id="mobile-navigation"
-            className="md:hidden overflow-hidden bg-white/95 dark:bg-surface-dark/95 backdrop-blur-xl border-t border-gray-200 dark:border-primary-800/30"
+            className="overflow-hidden border-t border-gray-900/10 bg-surface/95 backdrop-blur-xl dark:border-white/10 dark:bg-surface-dark/95 md:hidden"
           >
             <div className="flex flex-col px-6 py-4 gap-3">
               {NAV_ITEMS.map((item) => {
@@ -124,7 +122,7 @@ export function Navbar() {
                         handleNavClick(item.href)
                       }
                     }}
-                    className="text-sm font-medium text-gray-600 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 py-2"
+                    className="py-2 font-mono text-xs font-semibold uppercase tracking-wider text-gray-600 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400"
                   >
                     {t(item.labelKey)}
                   </Link>

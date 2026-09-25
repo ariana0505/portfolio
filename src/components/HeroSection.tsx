@@ -1,196 +1,122 @@
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
-import { ArrowDown, ArrowRight, Github, MapPin } from 'lucide-react'
+import { ArrowDownRight, ArrowRight, Github, MapPin } from 'lucide-react'
 import { SECTION_IDS } from '@/lib/constants'
-import { useMousePosition } from '@/hooks/useMousePosition'
-import { useMediaQuery } from '@/hooks/useMediaQuery'
-
-const shapes = [
-  { type: 'circle' as const, size: 50, x: '8%', y: '12%', depth: 0.03, duration: 18 },
-  { type: 'triangle' as const, size: 35, x: '88%', y: '18%', depth: 0.02, duration: 22 },
-  { type: 'square' as const, size: 28, x: '78%', y: '72%', depth: 0.01, duration: 25 },
-  { type: 'circle' as const, size: 20, x: '18%', y: '78%', depth: 0.02, duration: 20 },
-  { type: 'triangle' as const, size: 40, x: '52%', y: '8%', depth: 0.03, duration: 15 },
-  { type: 'circle' as const, size: 30, x: '68%', y: '48%', depth: 0.02, duration: 19 },
-]
-
-function Shape({ type, size, offsetX, offsetY, duration }: {
-  type: 'circle' | 'triangle' | 'square'; size: number
-  offsetX: number; offsetY: number; duration: number
-}) {
-  const el = type === 'circle' ? (
-    <div className="rounded-full border border-primary-400/20 bg-primary-400/5" style={{ width: size, height: size }} />
-  ) : type === 'triangle' ? (
-    <div style={{ width: 0, height: 0, borderLeft: `${size/2}px solid transparent`, borderRight: `${size/2}px solid transparent`, borderBottom: `${size}px solid rgba(31,167,179,0.12)` }} />
-  ) : (
-    <div className="rotate-45 border border-secondary-400/15 bg-secondary-400/5" style={{ width: size, height: size }} />
-  )
-
-  return (
-    <motion.div
-      className="absolute pointer-events-none"
-      style={{ x: offsetX, y: offsetY }}
-      animate={{ y: [offsetY, offsetY - 15, offsetY + 8, offsetY] }}
-      transition={{ duration, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
-    >
-      {el}
-    </motion.div>
-  )
-}
 
 export function HeroSection() {
   const { t } = useTranslation()
-  const { x: mouseX, y: mouseY } = useMousePosition()
-  const isDesktop = useMediaQuery('(pointer: fine)')
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
   }
 
-  const cx = typeof window !== 'undefined' ? window.innerWidth / 2 : 0
-  const cy = typeof window !== 'undefined' ? window.innerHeight / 2 : 0
-
   return (
     <section
       id={SECTION_IDS.hero}
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative flex min-h-[92svh] items-center overflow-hidden border-b border-gray-900/10 px-6 pb-20 pt-32 dark:border-white/10"
     >
-      {/* Floating shapes */}
-      <div className="absolute inset-0 pointer-events-none">
-        {(isDesktop ? shapes : shapes.slice(0, 3)).map((s, i) => (
-          <div key={i} style={{ position: 'absolute', left: s.x, top: s.y }}>
-            <Shape
-              type={s.type}
-              size={isDesktop ? s.size : s.size * 0.6}
-              offsetX={isDesktop ? (mouseX - cx) * s.depth : 0}
-              offsetY={isDesktop ? (mouseY - cy) * s.depth : 0}
-              duration={s.duration}
-            />
-          </div>
-        ))}
-      </div>
+      <div className="pointer-events-none absolute inset-x-0 top-24 -z-10 mx-auto h-72 max-w-5xl bg-[radial-gradient(circle_at_center,rgba(49,94,251,0.16),transparent_68%)] dark:bg-[radial-gradient(circle_at_center,rgba(96,125,255,0.12),transparent_68%)]" />
 
-      <div className="relative z-10 mx-auto max-w-6xl px-6 w-full">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left: Text content */}
-          <div>
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="mb-4"
-            >
-              <span className="font-mono text-sm font-medium text-primary-500 dark:text-primary-400 tracking-wider">
-                {'// '}{t('hero.greeting')}
-              </span>
-            </motion.div>
+      <div className="mx-auto grid w-full max-w-7xl items-center gap-16 lg:grid-cols-[1.35fr_0.65fr]">
+        <div>
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-7 flex items-center gap-3"
+          >
+            <span className="h-2.5 w-2.5 rounded-full bg-secondary-500" />
+            <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-gray-600 dark:text-gray-300">
+              {t('hero.greeting')}
+            </span>
+          </motion.div>
 
-            <motion.h1
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-display text-5xl lg:text-8xl font-extrabold mb-4 tracking-tight"
-            >
-              <span className="bg-gradient-to-r from-primary-600 via-secondary-500 to-accent bg-clip-text text-transparent">
-                {t('hero.name')}
-              </span>
-            </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 22 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.08 }}
+            className="font-display text-[clamp(4rem,10vw,8.5rem)] font-extrabold leading-[0.82] tracking-[-0.075em] text-gray-950 dark:text-white"
+          >
+            Ariana
+            <span className="block text-primary-600 dark:text-primary-400">Peña.</span>
+          </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-mono text-base text-gray-500 dark:text-gray-400 mb-8 max-w-md leading-relaxed"
-            >
-              {t('hero.tagline')}
-            </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.16 }}
+            className="mt-10 grid max-w-3xl gap-8 border-t border-gray-900/15 pt-7 sm:grid-cols-[1fr_auto] dark:border-white/15"
+          >
+            <div>
+              <p className="max-w-2xl text-lg leading-relaxed text-gray-600 dark:text-gray-300 md:text-xl">
+                {t('hero.tagline')}
+              </p>
+              <div className="mt-4 flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                <MapPin className="h-3.5 w-3.5 text-secondary-500" aria-hidden="true" />
+                {t('hero.location')}
+              </div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.25 }}
-              className="mb-8 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400"
-            >
-              <MapPin className="h-4 w-4 text-secondary-500" aria-hidden="true" />
-              {t('hero.location')}
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap items-center gap-3"
-            >
+            <div className="flex flex-wrap items-start gap-3 sm:flex-col">
               <button
                 onClick={() => scrollTo(SECTION_IDS.projects)}
-                className="flex items-center gap-2 rounded-xl bg-gray-900 dark:bg-white px-5 py-3 text-sm font-medium text-white dark:text-gray-900 hover:-translate-y-0.5 hover:shadow-lg transition-all cursor-pointer"
+                className="group inline-flex min-w-44 items-center justify-between gap-4 rounded-full bg-gray-950 px-5 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 dark:bg-white dark:text-gray-950"
               >
                 {t('hero.cta_projects')}
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </button>
               <a
                 href="https://github.com/ariana0505"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 rounded-xl border border-primary-300 dark:border-primary-700 px-5 py-3 text-sm font-medium text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors cursor-pointer"
+                className="inline-flex min-w-44 items-center justify-between gap-4 rounded-full border border-gray-900/25 px-5 py-3 text-sm font-semibold text-gray-900 transition-colors hover:border-primary-500 hover:text-primary-600 dark:border-white/25 dark:text-white dark:hover:border-primary-400 dark:hover:text-primary-400"
               >
-                <Github className="h-4 w-4" aria-hidden="true" />
                 GitHub
+                <Github className="h-4 w-4" aria-hidden="true" />
               </a>
-            </motion.div>
-          </div>
-
-          {/* Right: Photo */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="flex justify-center md:justify-end"
-          >
-            <div className="relative">
-              {/* Gradient ring */}
-              <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-3xl p-[3px] bg-gradient-to-br from-primary-500 via-secondary-400 to-accent rotate-3 hover:rotate-0 transition-transform duration-500">
-                <div className="w-full h-full rounded-3xl overflow-hidden bg-surface dark:bg-surface-dark">
-                  <img
-                    src="https://github.com/ariana0505.png?size=640"
-                    alt="Ariana Peña"
-                    width="640"
-                    height="640"
-                    fetchPriority="high"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-              {/* Floating status badge */}
-              <motion.div
-                className="absolute -bottom-3 -left-3 rounded-xl bg-white dark:bg-surface-dark-elevated shadow-lg border border-gray-200 dark:border-primary-800/30 px-4 py-2"
-                animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                <span className="font-mono text-xs text-gray-500 dark:text-gray-400 block">{t('hero.status_label')}</span>
-                <span className="text-sm font-medium text-gray-900 dark:text-white flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                  {t('hero.status')}
-                </span>
-              </motion.div>
             </div>
           </motion.div>
         </div>
 
-        {/* Scroll indicator */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          initial={{ opacity: 0, y: 24, rotate: 2 }}
+          animate={{ opacity: 1, y: 0, rotate: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="relative mx-auto w-full max-w-sm lg:mx-0 lg:justify-self-end"
         >
-          <button onClick={() => scrollTo(SECTION_IDS.about)} className="cursor-pointer" aria-label="Scroll down">
-            <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }}>
-              <ArrowDown className="h-5 w-5 text-gray-400" />
-            </motion.div>
-          </button>
+          <div className="absolute -bottom-3 -right-3 h-full w-full rounded-[2rem] bg-primary-600 dark:bg-primary-500" />
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border-2 border-gray-950 bg-accent dark:border-white">
+            <div className="absolute -right-12 -top-10 h-48 w-48 rounded-full border-[32px] border-white/35" />
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(16,17,21,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(16,17,21,0.08)_1px,transparent_1px)] bg-[size:28px_28px]" />
+            <div className="absolute inset-x-7 top-7 flex items-center justify-between font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-gray-950/65">
+              <span>Web developer</span>
+              <span>PE / 2026</span>
+            </div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="font-display text-[9rem] font-extrabold leading-none tracking-[-0.12em] text-gray-950">AP</span>
+            </div>
+            <div className="absolute bottom-28 left-7 rotate-[-6deg] rounded-full bg-secondary-500 px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-wider text-white">
+              Python · JS · TS
+            </div>
+            <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-white/20 bg-gray-950/85 p-4 text-white backdrop-blur-md">
+              <span className="mb-1 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-gray-300">
+                <span className="h-2 w-2 rounded-full bg-[#8fff74]" />
+                {t('hero.status_label')}
+              </span>
+              <span className="text-sm font-semibold">{t('hero.status')}</span>
+            </div>
+          </div>
         </motion.div>
       </div>
+
+      <button
+        onClick={() => scrollTo(SECTION_IDS.about)}
+        className="absolute bottom-7 left-6 hidden items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-gray-500 transition-colors hover:text-gray-900 lg:flex dark:text-gray-400 dark:hover:text-white"
+        aria-label="Scroll down"
+      >
+        Scroll
+        <ArrowDownRight className="h-4 w-4" aria-hidden="true" />
+      </button>
     </section>
   )
 }

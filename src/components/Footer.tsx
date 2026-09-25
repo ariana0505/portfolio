@@ -12,15 +12,12 @@ export function Footer() {
   const { t } = useTranslation()
 
   return (
-    <footer className="relative z-10 border-t border-transparent bg-gradient-to-b from-white/50 to-white/80 dark:from-surface-dark/50 dark:to-surface-dark/80">
-      {/* Gradient separator */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-primary-400/50 to-transparent" />
-
-      <div className="mx-auto max-w-6xl px-6 py-10">
+    <footer className="relative z-10 border-t border-gray-900/10 dark:border-white/10">
+      <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo + tagline */}
           <div>
-            <span className="font-display text-xl font-extrabold bg-gradient-to-r from-primary-500 to-secondary-400 bg-clip-text text-transparent tracking-tight">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-950 font-display text-sm font-extrabold text-white dark:bg-white dark:text-gray-950">
               AP
             </span>
             <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
@@ -60,7 +57,7 @@ export function Footer() {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-500 hover:text-white hover:bg-gradient-to-br hover:from-primary-500 hover:to-secondary-500 dark:text-gray-400 transition-all"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-900/15 text-gray-600 transition-colors hover:border-gray-950 hover:bg-gray-950 hover:text-white dark:border-white/15 dark:text-gray-300 dark:hover:border-white dark:hover:bg-white dark:hover:text-gray-950"
                     aria-label={link.name}
                   >
                     {Icon && <Icon className="h-4 w-4" />}
@@ -73,7 +70,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-8 pt-6 border-t border-gray-200 dark:border-primary-800/20">
-          <p className="text-sm text-gray-500 dark:text-gray-400 text-center flex items-center justify-center gap-1">
+          <p className="flex items-center justify-center gap-1 text-center font-mono text-xs text-gray-500 dark:text-gray-400">
             {t('footer.made_with')}{' '}
             <Heart className="h-4 w-4 text-secondary-500 fill-secondary-500" /> &copy;{' '}
             {new Date().getFullYear()}. {t('footer.rights')}

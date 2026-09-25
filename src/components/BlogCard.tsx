@@ -31,7 +31,7 @@ export function BlogCard({ post, horizontal = false }: BlogCardProps) {
             <img
               src={post.coverImage}
               alt={localize(post.title, lang)}
-              className={`w-full object-cover transition-all duration-500 group-hover:scale-105 ${horizontal ? 'h-44 md:h-full' : 'h-44'}`}
+              className={`w-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0 ${horizontal ? 'h-44 md:h-full' : 'h-52'}`}
               loading="lazy"
             />
             {/* Duotone overlay on hover */}
